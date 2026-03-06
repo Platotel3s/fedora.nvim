@@ -1,0 +1,42 @@
+-- ~/.config/nvim/lua/mappings.lua
+local map = vim.keymap.set
+map("n", "<F2>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+map("n", "<F3>", "<cmd>Telescope find_files<CR>", { desc = "Find files" })
+map("n", "<F4>", "<cmd>Telescope live_grep<CR>", { desc = "Search text" })
+map("n", "a", "<cmd>enew<CR>", { desc = "New file" })
+map("n", "q", "<cmd>q<CR>", { desc = "Quit" })
+map("n", "<C-a>", "ggVG")
+map("v", "<C-c>", "y")
+map("n", "<C-v>", "p")
+map("n", "<leader>t", "<cmd>Telescope themes<CR>", { desc = "Themes" })
+map("n","<F5>","<cmd>OverseerRun<CR>",{desc="Running Overseer"})
+map("n","<F6>","<cmd>OverseerToggle<CR>",{desc="Open Toggle Overseer"})
+map("n","<F7>","<cmd>OverseerBuild<CR>",{desc="Build Overseer"})
+map("n","<F8>","<cmd>OverseerRun Laravel Dev<CR>",{desc="Laravel Run Dev"})
+map("i", "<Tab>", function()
+  return string.rep(" ", vim.o.shiftwidth)
+end, { expr = true, noremap = true, silent = true })
+
+map("i", "<S-Tab>", function()
+  return "<C-d>"
+end, { expr = true, noremap = true, silent = true })
+
+map("n", "<Tab>", ">>", { noremap = true, silent = true })
+map("n", "<S-Tab>", "<<", { noremap = true, silent = true })
+
+map("v", "<Tab>", ">gv", { noremap = true, silent = true })
+map("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
+map("n", "f", "<cmd>HopWord<CR>", { desc = "Hop to word" })
+map("n", "<C-h>", "<C-w>h", { desc = "Window left" })
+map("n", "<C-j>", "<C-w>j", { desc = "Window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "Window up" })
+map("n", "<C-l>", "<C-w>l", { desc = "Window right" })
+
+map("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", { desc = "Git blame line" })
+map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Preview git hunk" })
+map("n", "<leader>gr", "<cmd>Gitsigns reset_hunk<CR>", { desc = "Reset git hunk" })
+map("n", "<leader>gs", "<cmd>Gitsigns stage_hunk<CR>", { desc = "Stage hunk" })
+map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Unstage hunk" })
+map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Git diff" })
+map("n", "<leader>gj", "<cmd>Gitsigns next_hunk<CR>", { desc = "Next git hunk" })
+map("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Prev git hunk" })
