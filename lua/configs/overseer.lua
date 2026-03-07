@@ -21,6 +21,7 @@ overseer.register_template({
 vim.api.nvim_create_user_command("LaravelRun", function()
   overseer.run_task({ name = "Laravel Dev" })
 end, {})
+
 vim.api.nvim_create_user_command("Artisan", function(opts)
   local args = vim.split(opts.args, " ")
   local task = overseer.new_task({
