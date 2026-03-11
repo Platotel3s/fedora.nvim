@@ -2,8 +2,8 @@
 local M = {}
 
 M.base46 = {
-  theme = "bearded-arc",
-  -- transparency = true,
+  theme = "neofusion",
+  --transparency = true,
   hl_override = {
     TelescopeNormal = { bg = "none" },
     TelescopeBorder = { fg = "#45475a", bg = "none" },
