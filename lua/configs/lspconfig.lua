@@ -136,3 +136,8 @@ vim.lsp.config.qmlls={
 }
 vim.lsp.enable("qmlls")
 
+vim.lsp.config.taplo={
+  on_attach=on_attach,
+  filetypes={"toml"}
+}
+vim.lsp.enable("taplo")

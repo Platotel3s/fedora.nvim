@@ -69,7 +69,12 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' },
     config = true,
   },
-  { "folke/noice.nvim", event = "VeryLazy", dependencies = { "MunifTanjim/nui.nvim" }, opts = {} },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {}
+  },
   { "rcarriga/nvim-notify", opts = { timeout = 300,background_colour = "#1e1e2e", } },
   { 'nvim-treesitter/nvim-treesitter', lazy = false, build = ':TSUpdate' },
   { "goolord/alpha-nvim", event = "VimEnter", config = function() require("configs.alpha-config") end },
