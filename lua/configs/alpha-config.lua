@@ -26,6 +26,7 @@ dashboard.section.buttons.val = {
   dashboard.button("a",  "  New File", "<cmd>enew<CR>"),
   dashboard.button("d",  "  Delete Current File", "<cmd>!rm %<CR>"),
   dashboard.button("<leader>t", "  Change Theme", "<cmd>Telescope themes<CR>"),
+  dashboard.button("w", "󰛔  Open Wrapped Menu", "<cmd>WrappedNvim<CR>"),
   dashboard.button("q",  "  Quit Neovim", "<cmd>q<CR>"),
 }
 
