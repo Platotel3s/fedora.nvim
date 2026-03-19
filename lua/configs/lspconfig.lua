@@ -50,6 +50,7 @@ vim.lsp.config.tailwindcss = {
     "javascriptreact",
     "typescriptreact",
     "blade",
+    "php"
   },
   init_options = {
     userLanguages = {
