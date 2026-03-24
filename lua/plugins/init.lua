@@ -120,7 +120,6 @@ return {
       custom_codedark.normal.a.fg = '#ffffff'
       custom_codedark.normal.b.bg = '#2c2f33'
       custom_codedark.normal.c.bg = '#1e1e1e'
-
       custom_codedark.insert.a.bg = '#6a9955'
       custom_codedark.insert.a.fg = '#FFFFFF'
       custom_codedark.visual.a.bg = '#dcdcaa'
@@ -192,7 +191,8 @@ return {
         tabline = {
           lualine_a = {
             {
-              'tabs',
+              -- 'tabs'
+              'buffers',
               mode = 2,
               max_length = vim.o.columns,
               tabs_color = {

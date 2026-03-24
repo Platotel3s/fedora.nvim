@@ -30,10 +30,10 @@ M.base46 = {
 }
 
 M.ui = {
-  statusline = { enabled = false },
+  statusline = { enabled = true },
   nvimtree = {
     side = "left",
-    width = 30,
+    width = 25,
     git_status = true,
   },
 }
