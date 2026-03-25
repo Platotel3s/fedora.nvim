@@ -142,3 +142,9 @@ vim.lsp.config.taplo={
   filetypes={"toml"}
 }
 vim.lsp.enable("taplo")
+
+vim.lsp.config.bash_language_server={
+  on_attach=on_attach,
+  filetypes={"sh"}
+}
+vim.lsp.enable("bash_language_server")
