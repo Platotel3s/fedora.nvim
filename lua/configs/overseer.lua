@@ -22,6 +22,7 @@ vim.api.nvim_create_user_command("LaravelRun", function()
   overseer.run_task({ name = "Laravel Dev" })
 end, {})
 
+
 vim.api.nvim_create_user_command("Artisan", function(opts)
   local args = vim.split(opts.args, " ")
   local task = overseer.new_task({
@@ -43,3 +44,10 @@ vim.api.nvim_create_user_command("Npm", function(opts)
   })
   task:start()
 end, { nargs = "*" })
+
+vim.api.nvim_create_user_command("LaravelQuit",function ()
+  local tasks=overseer.list_tasks({name="Laravel Dev"})
+  for _, task in pairs(tasks) do
+    task:stop()
+  end
+end,{})

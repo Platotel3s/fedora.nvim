@@ -4,6 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local on_attach = function(client)
   if client.server_capabilities then
     client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.signatureHelpProvider = false
   end
 end
 

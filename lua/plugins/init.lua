@@ -73,7 +73,13 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {}
+    opts = {
+      lsp={
+        signature={
+          enabled=false
+        }
+      }
+    }
   },
   { "rcarriga/nvim-notify", opts = { timeout = 300,background_colour = "#1e1e2e", } },
   { 'nvim-treesitter/nvim-treesitter', lazy = false, build = ':TSUpdate' },
