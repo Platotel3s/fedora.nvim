@@ -291,4 +291,29 @@ return {
     cmd = { "WrappedNvim" },
     opts = {},
   },
+  {
+    "michaelrommel/nvim-silicon",
+    lazy = true,
+    cmd = "Silicon",
+    main = "nvim-silicon",
+    opts = {
+      font = "JetBrainsMono Nerd Font=14",
+      theme = "Dracula",
+      background = "#ED3F27",
+      no_round_corner = false,
+      no_window_controls = false,
+      -- line_number = true,
+      line_offset = function(args)
+        return args.line1
+      end,
+      pad_horiz = 60,
+      pad_vert = 40,
+      shadow_blur_radius = 10,
+      shadow_offset_x = 8,
+      shadow_offset_y = 8,
+      shadow_color = "#100808",
+      to_clipboard = true,
+      output = "~/Pictures/silicon/",
+    },
+  },
 }

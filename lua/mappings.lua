@@ -40,3 +40,15 @@ map("n", "<leader>gu", "<cmd>Gitsigns undo_stage_hunk<CR>", { desc = "Unstage hu
 map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", { desc = "Git diff" })
 map("n", "<leader>gj", "<cmd>Gitsigns next_hunk<CR>", { desc = "Next git hunk" })
 map("n", "<leader>gk", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Prev git hunk" })
+
+vim.keymap.set("v", "<F6>", function()
+  require("nvim-silicon").shoot()
+end, { desc = "Silicon: Screenshot code" })
+
+vim.keymap.set("v", "<F7>", function()
+  require("nvim-silicon").clip()
+end, { desc = "Silicon: Screenshot to clipboard" })
+
+vim.keymap.set("v", "<F8>", function()
+  require("nvim-silicon").file()
+end, { desc = "Silicon: Screenshot to file" })
