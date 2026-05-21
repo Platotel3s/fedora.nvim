@@ -149,3 +149,8 @@ vim.lsp.config.bash_language_server={
   filetypes={"sh"}
 }
 vim.lsp.enable("bash_language_server")
+
+vim.lsp.config.kotlin_language_server={
+  on_attach=on_attach,
+  filetypes={"kt"}
+}

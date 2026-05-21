@@ -51,3 +51,38 @@ vim.api.nvim_create_user_command("LaravelQuit",function ()
     task:stop()
   end
 end,{})
+
+vim.api.nvim_create_user_command("Yarn", function(opts)
+  local args = vim.split(opts.args, " ")
+  local task = overseer.new_task({
+    cmd = { "yarn" },
+    args = args,
+    name = "yarn " .. table.concat(args, " "),
+    components = { "default" },
+  })
+  task:start()
+end, { nargs = "*" })
+
+vim.api.nvim_create_user_command("Expo", function(opts)
+  local args = vim.split(opts.args, " ")
+  table.insert(args, 1, "expo")
+  local task = overseer.new_task({
+    cmd = { "npx" },
+    args = args,
+    name = "npx expo " .. table.concat(vim.list_slice(args, 2), " "),
+    components = { "default" },
+  })
+  task:start()
+end, { nargs = "*" })
+
+
+vim.api.nvim_create_user_command("Pip", function(opts)
+  local args = vim.split(opts.args, " ")
+  local task = overseer.new_task({
+    cmd = { "pip" },
+    args = args,
+    name = "pip " .. table.concat(args, " "),
+    components = { "default" },
+  })
+  task:start()
+end, { nargs = "*" })

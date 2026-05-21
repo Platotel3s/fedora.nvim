@@ -299,7 +299,7 @@ return {
     opts = {
       font = "JetBrainsMono Nerd Font=14",
       theme = "Dracula",
-      background = "#ED3F27",
+      background = "#FFF",
       no_round_corner = false,
       no_window_controls = false,
       -- line_number = true,
