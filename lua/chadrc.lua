@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "jellybeans",
+  theme = "neofusion",
   --transparency = true,
   hl_override = {
     TelescopeNormal = { bg = "none" },
@@ -21,7 +21,7 @@ M.base46 = {
     NvimTreeEmptyFolderName = { fg = "#545c7e" },
     NvimTreeIndentMarker = { fg = "#3b4261" },
     NvimTreeGitDirty = { fg = "#FFAA00" },
-    NvimTreeGitNew = { fg = "#FF4400" },
+    NvimTreeGitNew = { fg = "#306D29" },
     LineNr = { fg = "#3b4261" },
     CursorLineNr = { fg = "#ff9e64", bold = true },
     Visual = { bg = "#3d3750" },
