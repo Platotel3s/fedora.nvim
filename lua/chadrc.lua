@@ -21,7 +21,7 @@ M.base46 = {
     NvimTreeEmptyFolderName = { fg = "#545c7e" },
     NvimTreeIndentMarker = { fg = "#3b4261" },
     NvimTreeGitDirty = { fg = "#FFAA00" },
-    NvimTreeGitNew = { fg = "#306D29" },
+    NvimTreeGitNew = { fg = "#FF4400" },
     LineNr = { fg = "#3b4261" },
     CursorLineNr = { fg = "#ff9e64", bold = true },
     Visual = { bg = "#3d3750" },

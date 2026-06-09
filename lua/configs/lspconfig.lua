@@ -150,7 +150,18 @@ vim.lsp.config.bash_language_server={
 }
 vim.lsp.enable("bash_language_server")
 
-vim.lsp.config.kotlin_language_server={
-  on_attach=on_attach,
-  filetypes={"kt"}
+vim.lsp.config.gopls = {
+  on_attach = on_attach,
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = vim.fs.root(0, { "go.work", "go.mod", ".git" }),
+  settings = {
+    gopls = {
+      usePlaceholders = true,    -- aktifkan snippet placeholder
+      completeUnimported = true, -- auto import
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
 }
+vim.lsp.enable("gopls")
