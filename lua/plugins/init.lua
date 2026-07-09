@@ -1,4 +1,5 @@
 -- ~/.config/nvim/lua/plugins/init.lua 
+
 return {
   {
     "hrsh7th/nvim-cmp",
@@ -81,7 +82,13 @@ return {
       }
     }
   },
-  { "rcarriga/nvim-notify", opts = { timeout = 1500,background_colour = "#1e1e2e", } },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      timeout = 1500,
+      background_colour = "#1e1e2e",
+    }
+  },
   { 'nvim-treesitter/nvim-treesitter', lazy = false, build = ':TSUpdate' },
   { "goolord/alpha-nvim", event = "VimEnter", config = function() require("configs.alpha-config") end },
   {
