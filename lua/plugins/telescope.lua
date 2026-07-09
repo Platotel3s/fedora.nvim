@@ -3,7 +3,7 @@ return{
     'nvim-telescope/telescope.nvim', version = '*',
     opts={
       defaults = {
-        layout_strategy = "horizontal",
+        layout_strategy = "horizontal", -- vertical
         layout_config = {
           horizontal = {
             prompt_position = "top",

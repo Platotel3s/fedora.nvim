@@ -1,9 +1,11 @@
-return{
+-- ~/.config/nvim/lua/plugins/image.lua
+return {
   {
     "3rd/image.nvim",
-    rocks = { hererocks = true },
+    build = true,
     lazy = false,
     priority = 500,
+    rocks = { "magick" },
     opts = {
       backend = "kitty",
       processor = "magick_cli",
@@ -13,11 +15,13 @@ return{
       },
     },
     config = function(_, opts)
-      local lazy_rocks = vim.fn.stdpath("data") .. "/lazy-rocks/image.nvim"
-      package.path = package.path .. ";" .. lazy_rocks .. "/share/lua/5.1/?.lua;" .. lazy_rocks .. "/share/lua/5.1/?/init.lua"
-      package.cpath = package.cpath .. ";" .. lazy_rocks .. "/lib/lua/5.1/?.so"
       require("image").setup(opts)
-      print("✓ image.nvim loaded with backend: " .. vim.inspect(require("image").backend_available))
+      
+      vim.schedule(function()
+        local is_available = require("image").backend_available
+        print("✓ image.nvim loaded. Backend Kitty tersedia: " .. tostring(is_available))
+      end)
     end,
   },
 }
+

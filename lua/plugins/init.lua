@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/plugins/init.lua
+-- ~/.config/nvim/lua/plugins/init.lua 
 return {
   {
     "hrsh7th/nvim-cmp",

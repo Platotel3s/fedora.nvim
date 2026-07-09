@@ -27,6 +27,22 @@ vim.lsp.config.lua_ls = {
 }
 vim.lsp.enable("lua_ls")
 
+vim.lsp.config.arduino_ls={
+  on_attach=on_attach,
+  filetypes={"cpp","c","objc","objcpp","arduino"},
+  init_options={
+    usePlaceholders=true,
+    completeUnimported=true
+  },
+}
+vim.lsp.enable("arduino_ls")
+
+vim.lsp.config("asm_ls", {
+  on_attach = on_attach,
+  filetypes = { "asm", "S", "s" },
+})
+vim.lsp.enable("asm_ls")
+
 vim.lsp.config.html = {
   on_attach = on_attach,
   filetypes = { "html","blade" },
@@ -95,7 +111,12 @@ vim.lsp.enable("pyright")
 
 vim.lsp.config.clangd = {
   on_attach = on_attach,
-  filetypes = { "c", "cpp" },
+  filetypes = { "c", "cpp","objc","objcpp","arduino" },
+  init_options={
+    usePlaceholders=true,
+    completeUnimported=true
+  },
+  cmd={"clangd","--compile-commands-dir=" ..vim.loop.cwd()}
 }
 vim.lsp.enable("clangd")
 
@@ -113,42 +134,11 @@ vim.lsp.config.dartls = {
 }
 vim.lsp.enable("dartls")
 
-
-vim.lsp.config.lemminx={
+vim.lsp.config.bashls={
   on_attach=on_attach,
-  filetypes={"xml"},
+  filetypes={"sh","bash"}
 }
-vim.lsp.enable("lemminx")
-
-vim.lsp.config.jdtls = {
-  on_attach = on_attach,
-  filetypes = { "java" },
-  root_dir = vim.fs.root(0, {
-    "pom.xml",
-    "build.gradle",
-    "settings.gradle",
-    ".git",
-  }),
-}
-vim.lsp.enable("jdtls")
-
-vim.lsp.config.qmlls={
-  on_attach=on_attach,
-  filetypes={"qml"},
-}
-vim.lsp.enable("qmlls")
-
-vim.lsp.config.taplo={
-  on_attach=on_attach,
-  filetypes={"toml"}
-}
-vim.lsp.enable("taplo")
-
-vim.lsp.config.bash_language_server={
-  on_attach=on_attach,
-  filetypes={"sh"}
-}
-vim.lsp.enable("bash_language_server")
+vim.lsp.enable("bashls")
 
 vim.lsp.config.gopls = {
   on_attach = on_attach,
@@ -156,8 +146,8 @@ vim.lsp.config.gopls = {
   root_dir = vim.fs.root(0, { "go.work", "go.mod", ".git" }),
   settings = {
     gopls = {
-      usePlaceholders = true,    -- aktifkan snippet placeholder
-      completeUnimported = true, -- auto import
+      usePlaceholders = true,
+      completeUnimported = true,
       analyses = {
         unusedparams = true,
       },
@@ -165,3 +155,9 @@ vim.lsp.config.gopls = {
   },
 }
 vim.lsp.enable("gopls")
+
+vim.lsp.config.neocmake = {
+  on_attach = on_attach,
+  filetypes = { "cmake" },
+}
+vim.lsp.enable("neocmake")
