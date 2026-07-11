@@ -62,7 +62,7 @@ dashboard.section.buttons.opts.hl = "AlphaButton"
 
 dashboard.section.footer.val = {
   "",
-  "The way of obtaining something is more important than the thing itself ...",
+  "Sukses berawal dari mimpi, maka itu perbanyaklah tidur ...",
 }
 dashboard.section.footer.opts.hl = "AlphaFooter"
 

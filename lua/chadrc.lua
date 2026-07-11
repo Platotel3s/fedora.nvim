@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "neofusion",
+  theme = "ayu_dark",
   --transparency = true,
   hl_override = {
     TelescopeNormal = { bg = "none" },
