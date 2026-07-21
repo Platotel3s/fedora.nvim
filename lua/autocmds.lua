@@ -4,3 +4,8 @@ vim.filetype.add({
     [".*%.blade%.php"] = "blade.php",
   },
 })
+vim.filetype.add({
+  extension = {
+    ino = "arduino",
+  },
+})

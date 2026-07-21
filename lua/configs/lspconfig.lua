@@ -27,16 +27,6 @@ vim.lsp.config.lua_ls = {
 }
 vim.lsp.enable("lua_ls")
 
-vim.lsp.config.arduino_ls={
-  on_attach=on_attach,
-  filetypes={"cpp","c","objc","objcpp","arduino"},
-  init_options={
-    usePlaceholders=true,
-    completeUnimported=true
-  },
-}
-vim.lsp.enable("arduino_ls")
-
 vim.lsp.config("asm_ls", {
   on_attach = on_attach,
   filetypes = { "asm", "S", "s" },
@@ -109,14 +99,21 @@ vim.lsp.config.pyright = {
 }
 vim.lsp.enable("pyright")
 
+-- KONFIGURASI CLANGD UTAMA (Hanya gunakan yang ini)
 vim.lsp.config.clangd = {
   on_attach = on_attach,
-  filetypes = { "c", "cpp","objc","objcpp","arduino" },
-  init_options={
-    usePlaceholders=true,
-    completeUnimported=true
+  filetypes = { "c", "cpp", "objc", "objcpp", "arduino" },
+  init_options = {
+    usePlaceholders = true,
+    completeUnimported = true
   },
-  cmd={"clangd","--compile-commands-dir=" ..vim.loop.cwd()}
+  cmd = {
+    "clangd",
+    "--compile-commands-dir=" .. vim.loop.cwd(),
+    "--clang-tidy",
+    "--fallback-style=LLVM",
+    "--query-driver=/usr/bin/avr-g++"
+  }
 }
 vim.lsp.enable("clangd")
 
@@ -161,3 +158,20 @@ vim.lsp.config.neocmake = {
   filetypes = { "cmake" },
 }
 vim.lsp.enable("neocmake")
+
+-- Nonaktifkan arduino_ls agar tidak bentrok dengan clangd
+vim.lsp.config.arduino_ls = {
+  on_attach = on_attach,
+  filetypes = {},
+}
+vim.lsp.enable("arduino_ls")
+
+-- ========================================================
+-- KODE CONFIG OVERSEER DAN USER COMMAND KAMU DI BAWAH SINI
+-- ========================================================
+local overseer = require("overseer")
+overseer.setup({
+  templates = { "builtin" },
+})
+
+-- (Sisa kode Overseer Laravel Dev, Artisan, Npm, Yarn, dll tetap biarkan di sini tanpa diubah)
