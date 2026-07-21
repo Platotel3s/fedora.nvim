@@ -7,10 +7,10 @@ return{
         layout_config = {
           horizontal = {
             prompt_position = "top",
-            preview_width = 0.75,
+            preview_width = 0.80,
           },
-          width = 0.90,
-          height = 0.90,
+          width = 0.95,
+          height = 0.95,
         },
         sorting_strategy = "ascending",
         border = true,
