@@ -99,7 +99,6 @@ vim.lsp.config.pyright = {
 }
 vim.lsp.enable("pyright")
 
--- KONFIGURASI CLANGD UTAMA (Hanya gunakan yang ini)
 vim.lsp.config.clangd = {
   on_attach = on_attach,
   filetypes = { "c", "cpp", "objc", "objcpp", "arduino" },
@@ -159,19 +158,13 @@ vim.lsp.config.neocmake = {
 }
 vim.lsp.enable("neocmake")
 
--- Nonaktifkan arduino_ls agar tidak bentrok dengan clangd
 vim.lsp.config.arduino_ls = {
   on_attach = on_attach,
   filetypes = {},
 }
 vim.lsp.enable("arduino_ls")
-
--- ========================================================
--- KODE CONFIG OVERSEER DAN USER COMMAND KAMU DI BAWAH SINI
--- ========================================================
 local overseer = require("overseer")
 overseer.setup({
   templates = { "builtin" },
 })
 
--- (Sisa kode Overseer Laravel Dev, Artisan, Npm, Yarn, dll tetap biarkan di sini tanpa diubah)
