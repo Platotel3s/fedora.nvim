@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "kanagawa",
+  theme = "bearded-arc",
   --transparency = true,
   hl_override = {
     TelescopeNormal = { bg = "none" },
@@ -33,7 +33,7 @@ M.ui = {
   statusline = { enabled = true },
   nvimtree = {
     side = "left",
-    width = 25,
+    width = 20,
     git_status = true,
   },
 }
